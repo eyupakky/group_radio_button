@@ -20,18 +20,22 @@ class RadioGroup<T> extends StatelessWidget {
   final void Function(T?)? onChanged;
   final Axis direction;
   final double spacebetween;
-  final double leftPadding = 0;
-  final double rightPadding = 0;
-  final double topPadding = 0;
-  final double bottomPadding = 0;
+  final double leftPadding;
+  final double rightPadding;
+  final double topPadding;
+  final double bottomPadding;
   final MainAxisAlignment horizontalAlignment;
   final Color? activeColor;
 
-  const RadioGroup.builder({
+   RadioGroup.builder({
     required this.groupValue,
     required this.onChanged,
     required this.items,
     required this.itemBuilder,
+    this.leftPadding = 0,
+     this.rightPadding = 0,
+     this.topPadding = 0,
+     this.bottomPadding=0,
     this.direction = Axis.vertical,
     this.spacebetween = 30,
     this.horizontalAlignment = MainAxisAlignment.spaceBetween,
