@@ -20,10 +20,10 @@ class RadioGroup<T> extends StatelessWidget {
   final void Function(T?)? onChanged;
   final Axis direction;
   final double spacebetween;
-  final double leftPadding;
-  final double rightPadding;
-  final double topPadding;
-  final double bottomPadding;
+  final double leftMargin;
+  final double rightMargin;
+  final double topMargin;
+  final double bottomMargin;
   final MainAxisAlignment horizontalAlignment;
   final Color? activeColor;
 
@@ -32,10 +32,10 @@ class RadioGroup<T> extends StatelessWidget {
     required this.onChanged,
     required this.items,
     required this.itemBuilder,
-    this.leftPadding = 0,
-     this.rightPadding = 0,
-     this.topPadding = 0,
-     this.bottomPadding=0,
+    this.leftMargin = 0,
+     this.rightMargin = 0,
+     this.topMargin= 0,
+     this.bottomMargin=0,
     this.direction = Axis.vertical,
     this.spacebetween = 30,
     this.horizontalAlignment = MainAxisAlignment.spaceBetween,
@@ -47,11 +47,11 @@ class RadioGroup<T> extends StatelessWidget {
           final radioButtonBuilder = this.itemBuilder(item);
 
           return Container(
-            padding: EdgeInsets.only(
-                left: leftPadding,
-                right: rightPadding,
-                top: topPadding,
-                bottom: bottomPadding),
+            margin: EdgeInsets.only(
+                left: leftMargin,
+                right: rightMargin,
+                top: topMargin,
+                bottom: bottomMargin),
             height: this.direction == Axis.vertical ? this.spacebetween : 40.0,
             child: RadioButton(
               description: radioButtonBuilder.description,
